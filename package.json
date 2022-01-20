@@ -1,0 +1,26 @@
+{
+  "name": "happycoin_challenge48h",
+  "version": "1.0.0",
+  "description": "Best way to be happy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeeMoh/HappyCoin_Challenge48h.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KeeMoh/HappyCoin_Challenge48h/issues"
+  },
+  "homepage": "https://github.com/KeeMoh/HappyCoin_Challenge48h#readme",
+  "devDependencies": {
+    "hardhat": "^2.8.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2"
+  }
+}
