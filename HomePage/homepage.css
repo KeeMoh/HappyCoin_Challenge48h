@@ -71,7 +71,7 @@ body { background-color: #F1F2EB;
   grid-template-columns: 25% 25% 25% 25%;
 }
 .grid-item {
-  background-color: rgb(255, 255, 255);	
+  background-color: rgb(255, 255, 255);    
   margin: 10px;
   padding: 20px;
   text-align: center;
@@ -80,6 +80,14 @@ body { background-color: #F1F2EB;
   display: flex;
   align-items: center;
   flex-direction: column;
+  transition: all .2s;
+}
+
+.grid-item:hover {
+  background-color: #313E50;
+  color: #F1F2EB;
+  transition: all .2s;
+  cursor: pointer;
 }
 
 .grid-item .right{
@@ -160,7 +168,7 @@ body { background-color: #F1F2EB;
 }
 
 .grid-get-item {
-  background-color: #F1F2EB;	
+  background-color: #F1F2EB;    
   margin: 10px;
   padding: 20px;
   border-radius: 20px;
@@ -169,7 +177,16 @@ body { background-color: #F1F2EB;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: center
+  justify-content: center;
+
+  transition: all .2s;
+}
+
+.grid-get-item:hover {
+  background-color: white;
+  color: #313E50;
+  transition: all .2s;
+  cursor: pointer;
 }
 
 .grid-get-item .right{
@@ -182,4 +199,3 @@ body { background-color: #F1F2EB;
 .grid-get-item img {
    margin-left: -140px;
 }
-

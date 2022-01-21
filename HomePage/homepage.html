@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>Happy Coin</title>
-    <link rel="stylesheet" href="/HomePage/homeage.css" />
+    <link rel="stylesheet" href="/HomePage/homepage.css" />
   </head>
 
   <body>
     <nav class="navbar">
       <div class="inner-navbar">
         <div>
-          <p class="bold">Temps restant : <span class="reg">4:59</span></p>
+          <p class="bold">Happiness : <class="reg">15</span></p>
         </div>
 
         <h1 class="bold">Happy Coin</h1>
 
-        <div class="bold">Happiness : <span class="reg">100</span></div>
+        <div class="bold">HappyCoin : <span class="reg">100</span></div>
       </div>
     </nav>
 
@@ -25,33 +25,33 @@
             <div class="grid-item">
                 <img src="/Ressources/Img/EmojiJaune.png" alt="EmoJaune">
                 <div class="right">
-                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <p class="bold">Gain : <span class="reg">1 Happiness</span></p>
                     <br>
-                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                    <p class="bold">Prix : <span class="reg">5 HC</span></p>
                 </div>
             </div>
             <div class="grid-item">
                 <img src="/Ressources/Img/EmojiVert.png" alt="EmoJaune">
                 <div class="right">
-                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <p class="bold">Gain : <span class="reg">5 Happiness</span></p>
                     <br>
-                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                    <p class="bold">Prix : <span class="reg">20 HC</span></p>
                 </div>
             </div>
             <div class="grid-item">
                 <img src="/Ressources/Img/EmojiRouge.png" alt="EmoJaune">
                 <div class="right">
-                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <p class="bold">Gain : <span class="reg">15 Happiness</span></p>
                     <br>
-                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                    <p class="bold">Prix : <span class="reg">50 HC</span></p>
                 </div>
             </div>
             <div class="grid-item">
                 <img src="/Ressources/Img/EmojiBleu.png" alt="EmoJaune">
                 <div class="right">
-                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <p class="bold">Gain : <span class="reg">50 Happiness</span></p>
                     <br>
-                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                    <p class="bold">Prix : <span class="reg">150 HC</span></p>
                 </div>
             </div>
         </div>
@@ -62,32 +62,33 @@
 
                     <h1 class="bold ">Collect Happiness</h1>
 
-                    <div class="grid-get-item">
+                    <div class="grid-get-item" onclick="timer(5)">
                         <img src="/Ressources/Img/EmojiRouge.png" alt="EmoJaune">
                         <div class="right">
-                            <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                            <p class="bold">Gain : <span class="reg">1 Happiness</span></p>
                             <br>
-                            <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                            <p class="bold">Délais : <span class="reg">5 min</span></p>
                         </div>
                     </div>
-                    <div class="grid-get-item">
+                    <div class="grid-get-item" onclick="timer(30)">
                         <img src="/Ressources/Img/EmojiJaune.png" alt="EmoJaune">
                         <div class="right">
-                            <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                            <p class="bold">Gain : <span class="reg">3 Happiness</span></p>
                             <br>
-                            <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                            <p class="bold">Délais : <span class="reg">30 min</span></p>
                         </div>
                     </div>
-                    <div class="grid-get-item">
+                    <div class="grid-get-item" onclick="timer(60)">
                         <img src="/Ressources/Img/EmojiVert.png" alt="EmoJaune">
                         <div class="right">
-                            <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                            <p class="bold">Gain : <span class="reg">5 Happiness</span></p>
                             <br>
-                            <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                            <p class="bold">Délais : <span class="reg">60 min</span></p>
                         </div>
                     </div>
 
-                    <h1 class="bold">Temps restant : <span class="reg">4:59</span></h1>
+                    <h1 class="bold">Temps restant : <span id="timer" class="reg"> </span></h1>
+
                 </div>
         </div>
           
@@ -97,6 +98,38 @@
     </section>
 
     <script>
+        var flag=true;
+ 
+ function do_it(){
+  
+ if(!flag) return;
+  
+ flag=false;
+  
+ // instructions
+  
+}
+        var isActive = true;
+        function timer(time){
+            if (!isActive) return;
+            isActive = false;
+            const departMinutes = time
+            let temps = departMinutes * 60
+
+            const timerElement = document.getElementById("timer")
+
+            setInterval(() => {
+            let minutes = parseInt(temps / 60, 10)
+            let secondes = parseInt(temps % 60, 10)
+
+            minutes = minutes < 10 ? "0" + minutes : minutes
+            secondes = secondes < 10 ? "0" + secondes : secondes
+
+            timerElement.innerText = `${minutes}:${secondes}`
+            temps = temps <= 0 ? 0 : temps - 1
+            }, 1000)
+        }
+
         function openNav() {
           document.getElementById("mySidepanel").style.width = "600px";
         }
@@ -105,5 +138,7 @@
           document.getElementById("mySidepanel").style.width = "0";
         }
         </script>
+
+
   </body>
 </html>
