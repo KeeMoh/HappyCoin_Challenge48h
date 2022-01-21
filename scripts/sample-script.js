@@ -14,13 +14,32 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  const HappyCoin = await hre.ethers.getContractFactory("HappyCoin");
+  const happycoin = await HappyCoin.deploy();
+  const deployer = await hre.ethers.getSigner();
+  console.log(deployer.address);
+  await happycoin.deployed();
 
-  await greeter.deployed();
+  console.log("HappyCoin deployed to:", happycoin.address);
+  console.log(await happycoin.balanceOf(deployer.address));
 
-  console.log("Greeter deployed to:", greeter.address);
-}
+//   console.log("---------");
+//   const Happiness = await hre.ethers.getContractFactory("Happiness");
+//   const happiness = await Happiness.deploy();
+//   const deployerh = await hre.ethers.getSigner();
+//   console.log(deployer.address);
+//   await happiness.deployed();
+
+//   console.log("Happiness deployed to:", happiness.address);
+//   console.log(await happiness.balanceOf(deployerh.address));
+
+//   console.log("-------------");
+//   console.log(await happycoin.balanceOf("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"));
+//   await happycoin.approve("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266", BigInt(100*10**18));
+//   await happycoin.transferFrom("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266","0x70997970c51812dc3a010c7d01b50e0d17dc79c8",BigInt(100*10**18) );
+//   console.log(await happycoin.balanceOf("0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266"));
+//   console.log(await happycoin.balanceOf("0x70997970c51812dc3a010c7d01b50e0d17dc79c8"));
+// }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
