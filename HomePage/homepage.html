@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happy Coin</title>
+    <link rel="stylesheet" href="/HomePage/homeage.css" />
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="inner-navbar">
+        <div>
+          <p class="bold">Temps restant : <span class="reg">4:59</span></p>
+        </div>
+
+        <h1 class="bold">Happy Coin</h1>
+
+        <div class="bold">Happiness : <span class="reg">100</span></div>
+      </div>
+    </nav>
+
+    <section class="marketplace">
+        <h1 class="bold title">Market Place</h1>
+        <div class="grid-exchange">
+            <div class="grid-item">
+                <img src="/Ressources/Img/EmojiJaune.png" alt="EmoJaune">
+                <div class="right">
+                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <br>
+                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="/Ressources/Img/EmojiVert.png" alt="EmoJaune">
+                <div class="right">
+                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <br>
+                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="/Ressources/Img/EmojiRouge.png" alt="EmoJaune">
+                <div class="right">
+                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <br>
+                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="/Ressources/Img/EmojiBleu.png" alt="EmoJaune">
+                <div class="right">
+                    <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                    <br>
+                    <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <div class="grid-getcoin">
+
+                    <h1 class="bold ">Collect Happiness</h1>
+
+                    <div class="grid-get-item">
+                        <img src="/Ressources/Img/EmojiRouge.png" alt="EmoJaune">
+                        <div class="right">
+                            <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                            <br>
+                            <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                        </div>
+                    </div>
+                    <div class="grid-get-item">
+                        <img src="/Ressources/Img/EmojiJaune.png" alt="EmoJaune">
+                        <div class="right">
+                            <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                            <br>
+                            <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                        </div>
+                    </div>
+                    <div class="grid-get-item">
+                        <img src="/Ressources/Img/EmojiVert.png" alt="EmoJaune">
+                        <div class="right">
+                            <p class="bold">Prix : <span class="reg">1 HC</span></p>
+                            <br>
+                            <p class="bold">Récompenses : <span class="reg">3 Happiness</span></p>
+                        </div>
+                    </div>
+
+                    <h1 class="bold">Temps restant : <span class="reg">4:59</span></h1>
+                </div>
+        </div>
+          
+        <button class="openbtn" onclick="openNav()"><img src="/Ressources/Img/down-chevron.png" alt="chevron"></button>  
+
+
+    </section>
+
+    <script>
+        function openNav() {
+          document.getElementById("mySidepanel").style.width = "600px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidepanel").style.width = "0";
+        }
+        </script>
+  </body>
+</html>
